@@ -19,8 +19,29 @@ a {
   html {
     color-scheme: dark;
   }
-  body {
-    color: white;
-    background: black;
-  }
+    body {
+        color: white;
+        background: #90A4B0;
+    }
 }
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #0094ff;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 10px 0;
+    padding-bottom: 25px;
+}
+
+.timeRight {
+    float: right;
+    color: #aaa;
+}
+
+.reply {
+    float: right;
+    color: #ff006e;
+}
+
+
