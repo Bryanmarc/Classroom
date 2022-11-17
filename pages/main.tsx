@@ -9,8 +9,8 @@ export default function main() {
 
 
             <div style={{ display: "flex", flex: '1'}}>
-                <div style={{ backgroundColor: "gray", width: '350px', marginLeft: '10px', marginBottom: '5px', gridArea: "auto", alignSelf: "flex-start" } }>
-                <h4 style={{textAlign: "center"} }> Your assigned tasks: </h4>
+                <div className="taskTitle">
+                <h4 className="h4"> Your assigned tasks: </h4>
   
                 <Task assignedTo="Cam, William" taskname="Create interface for class">
                 fix .tsx file to include the class interface
@@ -22,13 +22,11 @@ export default function main() {
  
             </div>
 
+                <div style={{ flex: '1' }}></div>
 
-                <div style={{ flex: '1' }}>
-                </div>
-
-
-                <div style={{ backgroundColor: "gray", width: '350px', marginLeft: '10px', marginBottom: '5px', gridArea: "auto"  }}>
-                    <h4 style={{ textAlign: "center" }}> Class Question Board </h4>
+                <div className="questionTitle text-center" >
+                    <h4 className=""> Class Question Board </h4>
+                    <button className="button"> Ask a Question</button>
 
                 <Question timeAsked= "11:46am" studentAsked= "Tanner">
                    When is assignment 14 due? 

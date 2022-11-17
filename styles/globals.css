@@ -25,18 +25,43 @@ a {
     }
 }
 
+.h4 {
+  text-align: center;
+
+}
+
+.button {
+  background-color: #2039ba; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
 .container {
     border: 2px solid #dedede;
     background-color: #0094ff;
     border-radius: 5px;
-    padding: 16px;
+    padding: 10px;
     margin: 10px 0;
     padding-bottom: 25px;
 }
 
+.hMargin {
+  margin-bottom: 5px;
+}
+
+.sName {
+  color: black;
+}
+
 .timeRight {
     float: right;
-    color: #aaa;
+    color: rgb(0, 0, 0);
 }
 
 .reply {
@@ -44,22 +69,40 @@ a {
     color: #ff006e;
 }
 
-.goalContainer {
-    border: 2px solid #dedede;
-    background-color: bisque;
-    border-radius: 5px;
-    padding: 16px;
-    margin: 10px 0;
-    padding-bottom: 25px;
-    margin-top: 10px; 
-    margin-left: 8px;
-    margin-bottom: 10px;
-    color: black;
+.replyBar {
+  float: left;
+  margin-top: 8px;
 }
 
-.taskText {
-    color: black;
-    font-size: xx-large;
+.taskPage {
+    border: 2px solid #000000;
+    margin-Top: '10px';
+    margin-Left: '8px';
+    margin-Bottom: '10px';
+
+}
+.taskTitle {
+    background-color:  #9d9d9d;
+    width: '350px';
+    margin-left:  '10px';
+    margin-Bottom: '5px';
+    grid-Area: "auto";
+    align-Self: "flex-start";
 }
 
+.questionTitle {
+    background-color:  #9d9d9d;
+    text-align: center;
+    width: '400px';
+    margin-left:  '100px';
+    grid-Area: 1 / col4-start / last-line / 6;
+    padding-bottom: 200px;
+}
 
+.note {
+  color:#ffffff;
+  margin: .5vw;
+  padding: 0.5em;
+  border-left: 0.5em solid #ff0000;
+  background: #ff9898;
+}
