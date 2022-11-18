@@ -1,0 +1,8 @@
+CREATE TABLE Users (
+  id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(64) NOT NULL,
+  last_name VARCHAR(64) NOT NULL,
+  username VARCHAR(64) NOT NULL,
+  team_id BIGINT,
+  role VARCHAR(64) NOT NULL
+);

@@ -1,0 +1,7 @@
+CREATE TABLE Replies (
+  id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  replier_id BIGINT NOT NULL,
+  content VARCHAR(1024) NOT NULL,
+  time_posted DATETIME NOT NULL,
+  is_solution BOOLEAN NOT NULL
+);
