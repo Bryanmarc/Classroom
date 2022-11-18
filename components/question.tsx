@@ -12,12 +12,14 @@ function Question(props: any) {
                 <span className="timeRight">{props.timeAsked}</span>
                 <br />
                 {props.children}
-                <form>
-                    <input className="replyBar" type="text" placeholder="send a reply?"/> 
-                    <a className=" reply mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                   <button>reply</button>
-                </a>
-                </form>
+                <div className="replyBar">
+                    <form>
+                        <input className="replyBar" type="text" placeholder="send a reply?"/> 
+                        <a className=" reply mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    <button>reply</button>
+                        </a>
+                    </form>
+                </div>
                 <br />
             </div>
 

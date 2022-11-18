@@ -69,32 +69,28 @@ a {
     color: #ff006e;
 }
 
-.replyBar {
-  float: left;
-  margin-top: 8px;
-}
 
 .taskPage {
     border: 2px solid #000000;
-    margin-Top: '10px';
-    margin-Left: '8px';
-    margin-Bottom: '10px';
+    margin-Top: 10px;
+    margin-Left: 8px;
+    margin-Bottom: 10px;
 
 }
 .taskTitle {
     background-color:  #9d9d9d;
-    width: '350px';
-    margin-left:  '10px';
-    margin-Bottom: '5px';
-    grid-Area: "auto";
-    align-Self: "flex-start";
+    width: 350px;
+    margin-left:  10px;
+    margin-Bottom: 5px;
+    grid-Area: auto;
+    align-Self: flex-start;
 }
 
 .questionTitle {
     background-color:  #9d9d9d;
     text-align: center;
-    width: '400px';
-    margin-left:  '100px';
+    width: 400px;
+    margin-left:  100px;
     grid-Area: 1 / col4-start / last-line / 6;
     padding-bottom: 200px;
 }
@@ -106,3 +102,61 @@ a {
   border-left: 0.5em solid #ff0000;
   background: #ff9898;
 }
+
+.question {
+    text-align: left;
+}
+
+.replyBar {
+    text-align: right;
+}
+
+.goalContainer {
+    border: 2px solid #dedede;
+    background-color: #0094ff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    padding-bottom: 25px;
+    color: black;
+    margin-left: 10px
+}
+
+.taskBoard {
+    margin-Top: 10px;
+    margin-Left: 8px;
+    margin-Bottom: 10px;
+}
+
+.goalName {
+    color: black;
+    font-size: 35px;
+}
+
+.goalBox {
+    overflow: visible !important;
+    width: auto !important;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    min-height: 200px;
+    z-index: 1;
+    position: relative;
+    background: #fff;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.taskDropdown {
+    margin-Top: 10px;
+    margin-Left: 8px;
+    margin-Bottom: 10px;
+    right: 25px;
+    left: -15px;
+}
+
+.headerText {
+    text-align: center;
+}
+

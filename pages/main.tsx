@@ -24,17 +24,18 @@ export default function main() {
 
                 <div style={{ flex: '1' }}></div>
 
-                <div className="questionTitle text-center" >
+                <div className="questionTitle" >
                     <h4 className=""> Class Question Board </h4>
                     <button className="button"> Ask a Question</button>
+                <div className="question">
+                    <Question timeAsked= "11:46am" studentAsked= "Tanner">
+                        When is assignment 14 due? 
+                    </Question>
 
-                <Question timeAsked= "11:46am" studentAsked= "Tanner">
-                   When is assignment 14 due? 
-                </Question>
-
-                <Question timeAsked="3:32pm" studentAsked = "Bryanmarc">
-                    What do I need to bring to class today?
-                </Question>
+                    <Question timeAsked="3:32pm" studentAsked = "Bryanmarc">
+                        What do I need to bring to class today?
+                    </Question>
+                </div>
                 </div>
             </div>
         </>
