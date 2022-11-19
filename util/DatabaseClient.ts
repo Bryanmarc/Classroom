@@ -15,7 +15,7 @@ class DatabaseHandler {
     static Connect() {
         return new Promise<void>( (resolve) => {
             DatabaseHandler.connection.connect();
-            this.isConnected = true;
+            DatabaseHandler.isConnected = true;
             console.log("Connected!")
             resolve();
         });
@@ -29,16 +29,15 @@ class DatabaseHandler {
         });
     }
 
-    static GetIssues(): any {
+    static Query(query: string): any {
         return new Promise<any>( (resolve) => {
-            const query = "SELECT * FROM Issues"
             console.log("Loading...")
-            if(!this.isConnected) {
-                this.Connect().then( () => {
+            if(!DatabaseHandler.isConnected) {
+                DatabaseHandler.Connect().then( () => {
                     console.log("Querying...")
                     DatabaseHandler.connection.query(query, (error: any, results: any, fields: any) => {
                         if (error) throw error;
-                        console.log(results[0]);
+                        console.log(results);
                         resolve(JSON.stringify(results));
                     });
                 });
@@ -46,12 +45,19 @@ class DatabaseHandler {
                 console.log("Querying...")
                 DatabaseHandler.connection.query(query, (error: any, results: any, fields: any) => {
                     if (error) throw error;
-                    console.log(results[0]);
+                    console.log(results);
                     resolve(JSON.stringify(results));
                 });
             }
         });
+    }
 
+    static GetIssues(): any {
+        return DatabaseHandler.Query("SELECT * FROM Issues")
+    }
+
+    static GetTop5MostRecentIssues(): any {
+        return DatabaseHandler.Query("SELECT * FROM Issues ORDER BY time_posted DESC LIMIT 5")
     }
     
 

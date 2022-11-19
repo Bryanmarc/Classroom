@@ -1,7 +1,12 @@
 import Task from "../components/task"
 import Header from "../components/header"
 import Question from "../components/question"
-export default function main() {
+import DatabaseHandler from "../util/DatabaseClient";
+import { useState } from "react";
+export default function main({top_5_issues}: any) {
+
+    const [issues, setIssues] = useState(JSON.parse(top_5_issues));
+
     return (
         <>
             <Header pageType="Dashboard">
@@ -11,7 +16,8 @@ export default function main() {
             <div style={{ display: "flex", flex: '1'}}>
                 <div className="taskTitle">
                 <h4 className="h4"> Your assigned tasks: </h4>
-  
+
+
                 <Task assignedTo="Cam, William" taskname="Create interface for class">
                 fix .tsx file to include the class interface
                 </Task>
@@ -24,20 +30,29 @@ export default function main() {
 
                 <div style={{ flex: '1' }}></div>
 
+                
+
+
                 <div className="questionTitle" >
                     <h4 className=""> Class Question Board </h4>
-                    <button className="button"> Ask a Question</button>
-                <div className="question">
-                    <Question timeAsked= "11:46am" studentAsked= "Tanner">
-                        When is assignment 14 due? 
-                    </Question>
-
-                    <Question timeAsked="3:32pm" studentAsked = "Bryanmarc">
-                        What do I need to bring to class today?
-                    </Question>
-                </div>
+                    <button className="button"> Ask a Question</button> { /* TODO: Make button pop up a modal to fill in a form for adding a question. */ }
+                    <div className="question">
+                        { issues.map((issue: any) => {
+                            return (
+                                <Question key={issue.id} title={issue.title} timeAsked={issue.time_posted} studentAsked={issue.author_id}>
+                                    {issue.content}
+                                </Question>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </>
     )
 }
+
+export async function getServerSideProps() {
+    const top_5_issues = await DatabaseHandler.GetTop5MostRecentIssues();
+    console.log("Successfully fetched Data");
+    return { props: { top_5_issues }}
+  }
