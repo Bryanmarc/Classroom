@@ -35,19 +35,27 @@ class DatabaseHandler {
             if(!DatabaseHandler.isConnected) {
                 DatabaseHandler.Connect().then( () => {
                     console.log("Querying...")
+                    try {
+                        DatabaseHandler.connection.query(query, (error: any, results: any, fields: any) => {
+                        if (error) throw error;
+                        console.log(results);
+                        resolve(JSON.stringify(results));
+                    });
+                    } catch (error) {
+                        console.log(error)
+                    }
+                });
+            } else {
+                console.log("Querying...")
+                try {
                     DatabaseHandler.connection.query(query, (error: any, results: any, fields: any) => {
                         if (error) throw error;
                         console.log(results);
                         resolve(JSON.stringify(results));
                     });
-                });
-            } else {
-                console.log("Querying...")
-                DatabaseHandler.connection.query(query, (error: any, results: any, fields: any) => {
-                    if (error) throw error;
-                    console.log(results);
-                    resolve(JSON.stringify(results));
-                });
+                } catch (error) {
+                    console.log(error)
+                }
             }
         });
     }
@@ -60,6 +68,13 @@ class DatabaseHandler {
         return DatabaseHandler.Query("SELECT * FROM Issues ORDER BY time_posted DESC LIMIT 5")
     }
     
+    static AddIssue(author_id: number, title: string, content: string): any {
+        console.log("TRYING TO QUERY!")
+        console.log("author_id: " + author_id)
+        console.log("title: " + title)
+        console.log("content: " + content)
+        return DatabaseHandler.Query(`INSERT INTO Issues (author_id, title, content, reply_ids, status, time_posted) VALUES (${author_id}, '${title}', '${content}', '', 'Active', NOW())`)
+    }
 
 
 }

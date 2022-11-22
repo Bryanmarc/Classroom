@@ -37,3 +37,4 @@ next-env.d.ts
 /.vs
 mysql_login.json
 .vscode/launch.json
+.vscode/settings.json
