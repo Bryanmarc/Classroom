@@ -1,11 +1,15 @@
 import Task from "../components/task"
+import React, { Component, FunctionComponent, useState } from 'react';
+import { Modal } from  '../components/modal';
+import { MyForm } from '../components/form';
+import { useModal } from '../components/useModal';
 import Header from "../components/header"
 import Question from "../components/question"
 import DatabaseHandler from "../util/DatabaseClient";
-import { useState } from "react";
 export default function main({top_5_issues}: any) {
 
     const [issues, setIssues] = useState(JSON.parse(top_5_issues));
+    const { isShown, toggle } = useModal();
 
     return (
         <>
@@ -30,12 +34,26 @@ export default function main({top_5_issues}: any) {
 
                 <div style={{ flex: '1' }}></div>
 
-                
-
-
                 <div className="questionTitle" >
                     <h4 className=""> Class Question Board </h4>
-                    <button className="button"> Ask a Question</button> { /* TODO: Make button pop up a modal to fill in a form for adding a question. */ }
+                    <React.Fragment>
+                        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onClick={toggle}>Ask a Question</button>
+                    <Modal
+                        isShown={isShown}
+                        hide={toggle}
+                        headerText="Question"
+                        modalContent={
+                            <>
+
+                            <MyForm></MyForm>
+                            </>
+                            
+                        }
+                    />
+                    </React.Fragment>
+
+                    
+                     { /* TODO: Make button pop up a modal to fill in a form for adding a question. */ }
                     <div className="question">
                         { issues.map((issue: any) => {
                             return (
