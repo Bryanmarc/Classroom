@@ -6,6 +6,35 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  padding: 1px 20px;
+  margin: 8px 0;
+}
+
+input[type=date] {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+input[type=checkbox] {
+  padding: 12px 20px;
+
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -159,5 +188,9 @@ a {
 
 .headerText {
     text-align: center;
+}
+
+.submit {
+  padding-left: 2px;
 }
 

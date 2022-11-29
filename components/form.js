@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import '../styles/globals.css'
 
 export function MyForm() {
   const [question, setQuestion] = useState("");
@@ -34,23 +34,25 @@ export function MyForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label> Title:
+            <label> Title: 
       <input 
           type="text" 
           value={title}
-          placeholder= "enter title:"
+          placeholder= "Enter Title: "
           onChange={(e) => setTitle(e.target.value)}
         />
       </label>
-      <label> Question:
+      <label> Question: 
         <input 
           type="text" 
           value={question}
-          placeholder= "enter question:"
+          placeholder= "Enter Question: "
           onChange={(e) => setQuestion(e.target.value)}
         />
       </label>
-      <input type="submit" />
+      <label>
+        <input className="submit mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" />
+      </label>
     </form>
   )
 }

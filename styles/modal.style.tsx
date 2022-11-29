@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 30%;
+  left: 40%;
   z-index: 700;
-  width: inherit;
-  outline: 0;
+  width: 100%;
 `;
 
 export const Backdrop = styled.div`
@@ -16,15 +14,23 @@ export const Backdrop = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 500;
 `;
 
 export const StyledModal = styled.div`
   z-index: 100;
+  outline-style: solid;
+  outline-color: #0094ff;
+  outline-width: 5px;
+  padding: 20px 20px 20px 20px;
   background: white;
-  position: relative;
-  margin: auto;
+  position: absolute;
+  width: '500px',
+  height: '300px',
+  top: '200px',
+  left: '500px',
+  right: '500px'
   border-radius: 8px;
 `;
 
@@ -36,9 +42,10 @@ export const Header = styled.div`
 `;
 
 export const HeaderText = styled.div`
-  color: #fff;
-  align-self: center;
-  color: lightgray;
+  font-color: rgba(0, 0, 0, 0);
+  font-weight: bold; 
+  font-size: 20px;
+  position: center;
 `;
 
 export const CloseButton = styled.button`

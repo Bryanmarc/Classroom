@@ -1,11 +1,13 @@
 import Task from "../components/task"
-import React, { Component, FunctionComponent, useState } from 'react';
+import React, { useState } from 'react';
 import { Modal } from  '../components/modal';
 import { MyForm } from '../components/form';
 import { useModal } from '../components/useModal';
 import Header from "../components/header"
 import Question from "../components/question"
 import DatabaseHandler from "../util/DatabaseClient";
+
+
 export default function main({top_5_issues}: any) {
 
     const [issues, setIssues] = useState(JSON.parse(top_5_issues));
@@ -41,13 +43,11 @@ export default function main({top_5_issues}: any) {
                     <Modal
                         isShown={isShown}
                         hide={toggle}
-                        headerText="Question"
+                        headerText="Ask a Question: "
                         modalContent={
                             <>
-
-                            <MyForm></MyForm>
+                                <MyForm></MyForm>
                             </>
-                            
                         }
                     />
                     </React.Fragment>
