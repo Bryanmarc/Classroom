@@ -13,8 +13,8 @@ function Header(props: any) {
                         <div className="mdl-layout-spacer"></div>
                         <nav className="mdl-navigation mdl-layout--large-screen-only">
                             <a className="mdl-navigation__link" href="">Class Page</a>
-                            <a className="mdl-navigation__link" href="">Taskboard</a>
-                            <a className="mdl-navigation__link" href="">My Page</a>
+                            <a className="mdl-navigation__link" href="http://localhost:3000/taskboard">Taskboard</a>
+                            <a className="mdl-navigation__link" href="http://localhost:3000/main">My Page</a>
                             <a className="mdl-navigation__link" href="">Logout</a>
                         </nav>
                     </div>

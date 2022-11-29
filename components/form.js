@@ -7,7 +7,29 @@ export function MyForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Question: ${question} Title: ${title}`)
+    console.log(`Question: ${question} Title: ${title}`)
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      "title": title,
+      "content": question,
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("./api/1.0/issues/Add", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+
+    // TODO: Add in a response to the user when the form is submitted successfully
   }
 
   return (
