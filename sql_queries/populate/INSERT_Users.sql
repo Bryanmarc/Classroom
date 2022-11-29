@@ -40,3 +40,45 @@ VALUES (
     '1',
     'STUDENT'
   );
+INSERT INTO Users (
+    first_name,
+    last_name,
+    username,
+    team_id,
+    role
+  )
+VALUES (
+    'Bryanmarc',
+    'Ray',
+    'BMAR981',
+    '2',
+    'STUDENT'
+  );
+INSERT INTO Users (
+    first_name,
+    last_name,
+    username,
+    team_id,
+    role
+  )
+VALUES (
+    'Jack',
+    'Jones',
+    'JCAJ291',
+    '2',
+    'STUDENT'
+  );
+INSERT INTO Users (
+    first_name,
+    last_name,
+    username,
+    team_id,
+    role
+  )
+VALUES (
+    'Tim',
+    'Castle',
+    'TBCA715',
+    '2',
+    'STUDENT'
+  );
