@@ -1,6 +1,15 @@
 import Header from "../components/header"
 import Goal from "../components/goal"
+import React, { Component, FunctionComponent, useState } from 'react';
+import { Modal } from  '../components/modal';
+import { MyForm2 } from '../components/form2';
+import { useModal } from '../components/useModal';
+
 export default function main() {
+
+    const [issues, setIssues] = useState();
+    const { isShown, toggle } = useModal();
+
     return (
         <>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -15,9 +24,19 @@ export default function main() {
                     
                     <h4 className="headerText"> Tasks Posted for Group 
                         <br/>
-                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                        create Goal
-                        </button>
+                        <React.Fragment>
+                        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onClick={toggle}>Create a Goal</button>
+                    <Modal
+                        isShown={isShown}
+                        hide={toggle}
+                        headerText="Create Goal: "
+                        modalContent={
+                            <>
+                                <MyForm2></MyForm2>
+                            </>
+                        }
+                    />
+                    </React.Fragment>
                     </h4>
 
 
